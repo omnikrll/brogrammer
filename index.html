@@ -1,0 +1,31 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" />
+	<title>BROGRAMMER: THE GAME</title>
+    <script src="http://cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/reset.min.css">
+</head>
+<body>
+
+<script type="text/javascript">
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+function preload() {
+	game.load.image('background', './assets/images/background.png');
+	game.load.spritesheet('hands', './assets/sprites/hands.png', 499, 136);
+}
+
+function create() {
+	game.add.sprite(0, 0, 'background');
+	game.add.sprite(182, 480, 'hands');
+}
+
+function update() {
+
+}
+
+</script>
+
+</body>
+</html>
