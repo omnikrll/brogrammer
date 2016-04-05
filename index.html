@@ -14,15 +14,48 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 function preload() {
 	game.load.image('background', './assets/images/background.png');
 	game.load.spritesheet('hands', './assets/sprites/hands.png', 499, 136);
+	game.load.spritesheet('text', './assets/sprites/text.png', 330, 166); 
 }
 
 function create() {
+	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.add.sprite(0, 0, 'background');
-	game.add.sprite(182, 480, 'hands');
+
+	player = game.add.sprite(180, game.world.height - 180, 'hands');
+	text = game.add.sprite(250, game.world.height - 389, 'text');
+	game.physics.arcade.enable(player);
+
+	cursors = game.input.keyboard.createCursorKeys();
+	hits = 0;
+	textFrame = 0;
 }
 
-function update() {
+var lastFrame = 0;
+var level = 1;
 
+function update() {
+	// level 1 mechanics
+	if (level == 1) {
+		if ((cursors.left.isDown && cursors.left.repeats == 0) || (cursors.right.isDown && cursors.right.repeats == 0)) {
+			player.frame = cursors.left.isDown ? 0 : 1;
+			if (lastFrame != player.frame) {
+				text.frame++;
+
+				if (!text.frame) {
+					text.frame = 0;
+				}
+
+				hits += 1;
+
+				if (hits == 50) {
+					alert('SICK BRO');
+					level = 2;
+				} else {
+					lastFrame = player.frame;
+				}
+			}
+		}
+	}
 }
 
 </script>
