@@ -21,12 +21,10 @@ function preload() {
 }
 
 function create() {
-	game.physics.startSystem(Phaser.Physics.ARCADE);
 	background1 = game.add.sprite(0, 0, 'background1');
 
 	hands = game.add.sprite(180, game.world.height - 180, 'hands');
 	text = game.add.sprite(250, game.world.height - 389, 'text');
-	game.physics.arcade.enable(hands);
 
 	cursors = game.input.keyboard.createCursorKeys();
 	hits = 0;
@@ -52,7 +50,7 @@ function update() {
 
 				hits++;
 
-				if (hits == 50) {
+				if (hits == 40) {
 					alert('SICK BRO\n\nLET\'S DO SOME PUSH UPS BEFORE WE GO\n\n(button mash up and down)');
 					level = 2;
 					background1.destroy();
@@ -78,7 +76,7 @@ function update() {
 			if (lastFrame != pushups.frame) {
 				hits++;
 
-				if (hits == 20) {
+				if (hits == 16) {
 					alert('HELL YEAH BRO\n\nLET\'S GO CRUSH SOME BREWS\n\n(button mash down)');
 					level = 3;
 					background2.destroy();
@@ -98,11 +96,11 @@ function update() {
 		if (cursors.down.isDown && cursors.down.repeats == 0) {
 			hits++;
 
-			if (hits % 3 == 0) {
+			if (hits % 4 == 0) {
 				beer.frame++;
 			}
 
-			if (hits == 10) {
+			if (hits == 13) {
 				alert('WE\'RE GONNA ROCK THE FUCKIN WORLD\n\nI LOVE YOU SO MUCH BRO');
 				background3.destroy();
 				beer.destroy();
