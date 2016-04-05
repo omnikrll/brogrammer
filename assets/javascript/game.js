@@ -87,6 +87,8 @@ function update() {
 
 					lastframe = 0;
 					hits = 0;
+				} else {
+					lastFrame = pushups.frame;
 				}
 			}
 		}
