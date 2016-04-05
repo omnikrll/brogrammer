@@ -1,4 +1,4 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
 
 var background1,
 	hands,
@@ -30,7 +30,7 @@ function create() {
 	hits = 0;
 	textFrame = 0;
 
-	alert('IT\'S ALMOST TIME FOR HAPPY HOUR BRO\n\nGOTTA CRUSH THAT LAST COMMIT!!!\n\n(button mash left and right)');
+	alert('IT\'S ALMOST TIME FOR HAPPY HOUR BRO\n\nGOTTA CRUSH THAT LAST COMMIT\n\n(button mash left and right)');
 }
 
 var lastFrame = 0;
@@ -101,7 +101,7 @@ function update() {
 			}
 
 			if (hits == 13) {
-				alert('WE\'RE GONNA ROCK THE FUCKIN WORLD\n\nI LOVE YOU SO MUCH BRO');
+				alert('WE\'RE GONNA CHANGE THE WORLD BRO\n\nI LOVE YOU SO MUCH\n\n(refresh to keep crushing it)');
 				background3.destroy();
 				beer.destroy();
 			}
