@@ -30,7 +30,7 @@ function create() {
 	hits = 0;
 	textFrame = 0;
 
-	alert('IT\'S ALMOST TIME FOR HAPPY HOUR BRO\n\nGOTTA CRUSH THAT LAST COMMIT\n\n(button mash left and right)');
+	alert('IT\'S ALMOST TIME FOR HAPPY HOUR BRO\n\nGOTTA CRUSH THAT LAST COMMIT\n\n(button mash left and right arrow keys)');
 }
 
 var lastFrame = 0;
@@ -51,7 +51,7 @@ function update() {
 				hits++;
 
 				if (hits == 40) {
-					alert('SICK BRO\n\nLET\'S DO SOME PUSH UPS BEFORE WE GO\n\n(button mash up and down)');
+					alert('SICK BRO\n\nLET\'S DO SOME PUSH UPS BEFORE WE GO\n\n(button mash up and down arrow keys)');
 					level = 2;
 					background1.destroy();
 					hands.destroy();
@@ -77,7 +77,7 @@ function update() {
 				hits++;
 
 				if (hits == 16) {
-					alert('HELL YEAH BRO\n\nLET\'S GO CRUSH SOME BREWS\n\n(button mash down)');
+					alert('HELL YEAH BRO\n\nLET\'S GO CRUSH SOME BREWS\n\n(button mash down arrow key)');
 					level = 3;
 					background2.destroy();
 					pushups.destroy();
